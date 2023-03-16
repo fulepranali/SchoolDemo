@@ -1,0 +1,23 @@
+<h1>Edit Article</h1>
+
+<%= form_with model: @student do |form| %>
+  <div>
+    <%= form.label :FirstName %><br>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div>
+    <%= form.label :LastName %><br>
+    <%= form.text_field :last_name %>
+  </div>
+  
+  <div>
+    <%= form.label :Class %><br>
+    <%= form.text_field :class_name %>
+  </div>
+  <br/>
+  <div>
+    <%= form.submit %>
+  </div>
+
+<% end %>

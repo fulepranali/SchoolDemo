@@ -1,0 +1,55 @@
+<h1>Student</h1>
+<table>
+	
+			<tr>
+				<th>First Name: -</th>
+				<td><%= @student.first_name %></td>
+			</tr>
+			<tr>
+				<th>Last Name: -</th>
+				<td><%= @student.last_name %></td>
+			</tr>
+			<tr>
+				<th>Class: -</th>
+				<td><%= @student.class_name %></td>
+			</tr>
+			<tr>
+				
+				<td><a href="<%= students_path %>">Previous</a></td>
+				<td><a href="<%= edit_student_path(@student) %>">Edit</a></td>
+	
+			</tr>
+			</tr>			
+</table>
+<h2>Comments</h2>
+<% @student.comments.each do |comment| %>
+  <p>
+    <strong>Commenter:</strong>
+    <%= comment.commenter %>
+  </p>
+
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  </p>
+<% end %>
+
+<h2>Add a Comment:</h2>
+
+<%= form_with model: [ @student, @student.comments.build ] do |form| %>
+  <p>
+    <%= form.label :commenter %><br>
+    <%= form.text_field :commenter %>
+  </p>
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+
+
+
