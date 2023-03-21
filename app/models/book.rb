@@ -1,3 +1,3 @@
 class Book < ApplicationRecord
-    belongs_to :author   
+    belongs_to :author , -> { where active: true }
 end
