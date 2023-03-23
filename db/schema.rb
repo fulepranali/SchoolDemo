@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_21_125841) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_23_115123) do
   create_table "account_histories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "account_id"
     t.integer "credit_rating"
@@ -93,6 +93,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_21_125841) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "people", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "physicians", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -138,6 +144,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_21_125841) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "guid"
+  end
+
+  create_table "vehicles", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "type"
+    t.string "color"
+    t.decimal "price", precision: 10, scale: 2
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "writers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
