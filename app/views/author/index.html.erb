@@ -1,0 +1,17 @@
+<h1>Authors</h1>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+    </tr>
+    <% @author.each do |a|%>
+     <tr>
+       <td><%= a.id %></td>
+       <td><%= a.name %></td>
+       <td>
+		  <a href="<%= book_path(a) %>">Book Details </a>
+		</td>
+     </tr>
+    <%end%>
+
+</table>

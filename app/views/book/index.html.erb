@@ -1,0 +1,15 @@
+<h1>Book Details</h1>
+<table>
+    <tr>
+        <th>Author Id</th>
+        <th>Publish_at</th>
+    </tr>
+    
+    <% @book.each do |b|%>
+    <tr>
+       <td><%= b.author_id %></td>
+       <td><%= b.publish_at %></td>
+    </tr>
+    <%end%>
+
+</table>

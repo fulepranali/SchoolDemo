@@ -1,0 +1,15 @@
+<h1>Show Authors</h1>
+<table>
+    <tr>
+        <th>Author Id</th>
+        <th>Publish_at</th>
+    </tr>
+    
+    <% @author.each do |a|%>
+    <tr>
+       <td><%= a.author_id %></td>
+       <td><%= a.publish_at %></td>
+    </tr>
+    <%end%>
+
+</table>
